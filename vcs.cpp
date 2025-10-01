@@ -64,6 +64,8 @@ public:
     void undo() {
         if (current != NULL && current->prev != NULL) {
             current = current->prev;
+            cout << "\nHEAD moved back to commit " << current->commit_id
+                << " -> \"" << current->content << "\"\n";
         } else {
             cout << "\nNo previous version available.\n";
         }
